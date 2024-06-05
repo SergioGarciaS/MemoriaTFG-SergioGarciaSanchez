@@ -30,14 +30,14 @@
 \usepackage{float}  %% H para posicionar figuras
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
 \usepackage{latexsym}  %% Logo LaTeX
-
+\usepackage{listings}
 % Escribe el título y el nombre del autor / autora para que se use bien
 % en otras partes de la plantilla
 % Dependiendo de las partes de la plantilla, a veces aparecerán tal
 % cual los escribas, a veces totalmente en mayúsculas, a veces de otras
 % formas
-\title{Título del Trabajo con Letras Mayúsculas para Sustantivos y Adjetivos}
-\author{Nombre del autor / autora}
+\title{ANÁLISIS DE AUTORES EN COMÚN DE CONGRESOS Y REVISTAS CIENTÍFICAS USANDO DBLP}
+\author{Sergio García Sánchez}
 
 % Guarda el título, el autor y la fecha en variables
 \makeatletter
@@ -68,11 +68,11 @@ ESCUELA DE INGENIERÍA DE FUENLABRADA
 \vspace{1cm}
 
 \LARGE
-TITULACIÓN EN MAYÚSCULAS
+GRADO EN INGENIERÍA EN SISTEMAS AUDIOVISUALES Y MULTIMEDIA
 
 \vspace{1cm}
 \LARGE
-\textbf{TRABAJO FIN DE GRADO/MÁSTER}
+\textbf{TRABAJO FIN DE GRADO}
 
 \vspace{2cm}
 
@@ -83,12 +83,12 @@ TITULACIÓN EN MAYÚSCULAS
 
 \large
 Autor : \theauthor \\
-Tutor : Dr. Nombre del Profesor/a\\
+Tutor : Dr. Gregorio Robles\\
 Cotutor: (si procede)
 \vspace{1cm}
 
 \large
-Curso académico 202X/202X
+Curso académico 2023/2024
 
 \end{center}
 \end{titlepage}
@@ -108,7 +108,7 @@ Curso académico 202X/202X
 \vspace{-4cm}
 \begin{center}
 \LARGE
-\textbf{Trabajo Fin de Grado/Máster}
+\textbf{Trabajo Fin de Grado}
 
 \vspace{1cm}
 \large
@@ -373,17 +373,35 @@ Así:
 \section{Objetivo general} % título de sección (se muestra)
 \label{sec:objetivo-general} % identificador de sección (no se muestra, es para poder referenciarla)
 
-Aquí vendría el objetivo general en una frase:
-Mi trabajo fin de grado consiste en crear de una herramienta de análisis de los comentarios jocosos en repositorios de software libre alojados en la plataforma GitHub.
 
-Recuerda que los objetivos siempre vienen en infinitivo.
+Mi trabajo fin de grado consiste en crear de una herramienta de análisis de autores que comparten congresos y revistas utilizando DBLP.
+Se pretende entender graficamente I)la cantidad de colaboraciones, y II) las dinámicas de publicacion de los autores por congreso, todo dentro
+del marco de la comunidad científica.
+
 
 
 \section{Objetivos específicos}
 \label{sec:objetivos-especificos}
 
-Los objetivos específicos se pueden entender como las tareas en las que se ha desglosado el objetivo general.
-Y, sí, también vienen en infinitivo.
+Este proyecto tiene como objetivo crear una herramienta de análisis de autores coincidentes utilizando DBLP, sin embargo, 
+este concepto es lo suficientemente amplio como para abordarlo de manera general.Por lo tanto, los objetivos específicos detallan
+de la siguiente manera:
+
+1. Decidir las metodología, que tecnologías y proceso tendrá el ecosistema.
+
+2. Desarrollo de la herramienta de visualización de datos:
+Para ello se debe implementar:
+
+- La herramienta extracción de datos, procesamiento y ordenación de los mismos.
+
+- Una interfaz gráfica de usuario (WEB) que facilite la interacción y visualización de los datos.
+
+3. Comparación de la interfaz gráfica con la herramienta de conteo de autores por congreso.
+
+
+
+
+
 
 
 \section{Planificación temporal}
@@ -403,73 +421,111 @@ Lo importante es que quede claro cuánto tiempo llevas (tiempo natural, p.ej., 6
 \chapter{Estado del arte}
 \label{chap:estado}
 
-Descripción de las tecnologías que utilizas en tu trabajo. 
-Con dos o tres párrafos por cada tecnología, vale. 
-Se supone que aquí viene todo lo que no has hecho tú.
+        En este capítulo se van a introducir las tecnologías utilizadas en este trabajo.
 
-Puedes citar libros, como el de Bonabeau et al., sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. 
-Me encantan los procesos estigmérgicos.
-Deberías leer más sobre ellos.
-Pero quizás no ahora, que tenemos que terminar la memoria para sacarnos por fin el título.
-Nota que el \~ \ añade un espacio en blanco, pero no deja que exista un salto de línea. 
-Imprescindible ponerlo para las citas.
-
-Citar es importantísimo en textos científico-técnicos. 
-Porque no partimos de cero.
-Es más, partir de cero es de tontos; lo suyo es aprovecharse de lo ya existente para construir encima y hacer cosas más sofisticadas.
-¿Dónde puedo encontrar textos científicos que referenciar?
-Un buen sitio es Google Scholar\footnote{\url{http://scholar.google.com}}.
-Por ejemplo, si buscas por ``stigmergy libre software'' para encontrar trabajo sobre software libre y el concepto de \emph{estigmergia} (¿te he comentado que me gusta el concepto de estigmergia ya?), encontrarás un artículo que escribí hace tiempo cuyo título es ``Self-organized development in libre software: a model based on the stigmergy concept''.
-Si pulsas sobre las comillas dobles (entre la estrella y el ``citado por ...'', justo debajo del extracto del resumen del artículo, te saldrá una ventana emergente con cómo citar.
-Abajo a la derecha, aparece un enlace BibTeX.
-Púlsalo y encontrarás la referencia en formato BibTeX, tal que así:
-
-{\footnotesize
-\begin{verbatim}
-@inproceedings{robles2005self,
-  title={Self-organized development in libre software:
-         a model based on the stigmergy concept},
-  author={Robles, Gregorio and Merelo, Juan Juli\'an 
-          and Gonz\'alez-Barahona, Jes\'us M.},
-  booktitle={ProSim'05},
-  year={2005}
-}
-\end{verbatim}
-}
-
-Copia el texto en BibTeX y pégalo en el fichero \texttt{memoria.bib}, que es donde están las referencias bibliográficas.
-Para incluir la referencia en el texto de la memoria, deberás citarlo, como hemos hecho antes con~\cite{bonabeau:_swarm}, lo que pasa es que en vez de el identificador de la cita anterior (bonabeau:\_swarm), tendrás que poner el nuevo (robles2005self).
-Compila el fichero \texttt{memoria.tex} (\texttt{pdflatex memoria.tex}), añade la bibliografía (\texttt{bibtex memoria.aux}) y vuelve a compilar \texttt{memoria.tex} (\texttt{pdflatex memoria.tex})\ldots y \emph{voilà} ¡tenemos una nueva cita~\cite{robles2005self}!
-
-También existe la posibilidad de poner notas al pie de página, por ejemplo, una para indicarte que visite la página del GSyC\footnote{\url{http://gsyc.es}}.
-
-
-
-\section{Sección 1} 
+\section{Python} 
 \label{sec:seccion1}
 
-Hemos hablado de cómo incluir figuras.
-Pero no hemos dicho nada de tablas.
-A mí me gustan las tablas.
-Mucho.
-Aquí un ejemplo de tabla, la Tabla~\ref{tab:ejemplo} (siento ser pesado, pero nota cómo he puesto la referencia).
+Python ha adquirido una relevancia como lenguaje de programación mas utilizado en la comunidad académica y científica debido a que se trata de un lenguaje de alto nivel, cuya característica principal es sencillez, la versatilidad y la gran colección de bibiliotecas especializadas componen el resto de características mas importantes.
 
-\begin{table}
- \begin{center}
-  \begin{tabular}{ | l | c | r |} % tenemos tres colummnas, la primera alineada a la izquierda (l), la segunda al centro (c) y la tercera a la derecha (r). El | indica que entre las columnas habrá una línea separadora.
-    \hline
-    Uno & 2 & 3 \\ \hline % el hline nos da una línea vertical
-    Cuatro & 5 & 6 \\ \hline
-    Siete & 8 & 9 \\
-    \hline
-  \end{tabular}
-  \caption{Ejemplo de tabla. Aquí viene una pequeña descripción (el \emph{caption}, el pie de tabla/figura) del contenido de la tabla. Si la tabla no es autoexplicativa, siempre viene bien aclararla aquí.}
-  \label{tab:ejemplo}
- \end{center}
-\end{table}
+Dentro del contexto de este trabajo, la creación de una herramienta de análisis donde se observa como los autores coinciden en los congresos es muy destacado debido a:
 
-Hay un sitio en Internet donde puedes diseñar las tablas fácilmente y luego hacer un corta y pega del resultado en tu editor.
-Puedes probarlo en \url{https://www.tablesgenerator.com/}.
+Extracción y la posterior manipulación de datos: Bibliotecas como sqlite3, lmxl o json nos ayuda a convertir los datos en una base de datos manejable.
+
+Web Scraping y APIs: En este apartado destacan las librerías como BeautifulSoup (utilizadas en el comienzo del trabajo) y Request utilizadas para obtención de los datos dentro de la web, incluyendo la recolección de la información de los datos bibliográficos como en este caso DBLP.
+
+Visualización de datos: Bibliotecas como plotly o matplotlib se utilizan para la creación de gráficos detallados de los datos de las publicaciones y colaboraciones entre autores. En este caso se desestimó la idea, ya que como se verá a continuación se desarrolló una herramienta web.
+
+Ventajas de utilizar Python en este proyecto:
+
+Amplia comunidad y soporte: facilidad de acceso a recursos y tutorialesy una amplia comunidad de usuarios y desarrolladores activa.
+
+Eficiencia y simplicidad de uso: Con una sintaxis clara y precisa puedes desarrollar una solución eficiente y rápida.
+
+\subsection{SQlite3}
+
+SQLite3 es una librería en Python que proporciona las herramientas para interactuar con la base de datos de SQlite. Dicha base de datos es una bibliteca de C que implementa un motor de bases de datos SQL autónomo, fiable, sin configuración y con todas las funciones de SQL.
+
+La integración con SQL se produce directamente desde python pudiendo utilizar los comandos: 'SELECT', 'INSERT', 'UPDATE', 'DELETE', como otros operadores de las bases de datos.
+
+No precisa de configuración en un servidor independiente, las bases de datos se almacenan en un archivo del sistema de archivos, facilitando el transporte y su uso. Es importante destacar que cada archivo de base de datos es completamente autónomo y contiene los datos y la lógica necesaria para su funcionamiento.
+
+\subsection{Lxlm}
+
+Se trata de una librería de python que tiene como funciones el procesamiento y manipulación de archivos HTML y XML, es una herramienta con mucho potencial que está construida sobre bibliotecas C, concretamente 'libxslt' y 'libxml2'.
+
+Tiene como características principales la facilidad de uso, compatibilidad con HTML5, manipulación de árboles de datos y destacan el rendimiento y velocidad.
+
+En nuestro trabajo se utiliza para realizar el parseo de información hacia la base de datos en formato SQL.
+
+\subsection{Os}
+
+Biblioteca que proporciona una interfaz para interactuar con el sistema operativo base, permitiendo ejecutar comandos propios del sistema operativo de forma portatil. En nuestra herramiente se utiliza para levantar un error del sistema.
+
+\subsection{Argparse}
+
+Se trata de una librería estandar que proporciona las herramientas para definir los argumentos que precisa una interfaz de línea, como deben procesarse y generan la ayuda para los usuarios. Fue incorporado a Python 2.7 como remplazo de optparse
+
+\subsection{Time}
+
+Biblioteca que suministra las funciones para trabajar con el tiempo, pudiéndose implementar funciones como medir el tiempo de ejecución del programa, gestionar marcas de tiempo o incluir retrasos en el código.
+
+En nuestro trabajo se utiliza para medir la cantidad de tiempo que tarda en realizar el parseo del XML de DBLP.
+
+\subsection{Json}
+
+Módulo que proporciona las herramientas necesarias para la manipulación de archivos JSON. En nuestro proyecto se utiliza para crear el JSON que será leido mediante la API.
+
+\section{JSON} 
+\label{sec:seccion1}
+
+JavaScript Object Notation se caracteriza por su simplicidad, legibilidad y compatibilidad con multiples lenguajes de programación, incluyendo como en nuestro caso Python.
+Este formato tiene como función almacenar información estructurada que se utiliza para la transferencia de datos entre un servicio web y aplicaciones, principalmente.
+
+Originariamente, JSON se utilizaba con la notación basada en objetos de JavaScript, el formato se compone de dos campos diferenciados key y value.
+Las Keys contienen una cadena de caracteres entrecomillada y los Values o valores contienen un tipo de dato válido JSON, del mismo modo entrecomillado. Dicho campo puede estar formado por un array, un string, un objeto, un diccionario, un boolean, un número o un tipo nulo.
+
+En este punto se presenta un ejemplo de la estructura tipo de un formato JSON:
+
+\begin{lstlisting}
+{
+    "Key": {
+        "Dict": {
+            "option1": "ok",
+            "List": [
+                "thing1",
+                "thing2",
+                "thing3"
+            ]
+        },
+        "Dict2": {
+            "opcode": "custom",
+            "List2": [
+                "customA",
+                "customB"
+            ]
+        }
+    }
+}
+\end{lstlisting}
+
+En el contexto del trabajo, que es la de crear una herramienta de análisis, desempeña un papel fundamental en los siguientes aspectos:
+
+Almacenamiento de datos: Permite almacenar información complicada bien organizada, debido a su estructura flexible y jerárquica. En este trabajo cada autor o publicación se puede almacenar o representar como un objeto JSON con atributos como nombre, año, titulo... Facilitando el manejo y haciéndolo mas accesible.
+
+Intercambio de datos: Como se mencionó anteriormente, es utilizado primordialmente para el intercambio entra servicios web y aplicaciones. La funcionalidad de este trabajo es la de ser extraídos mediante una API, simplificando el análisis y el procesamiento.
+
+Sencillez a la hora de manipular los datos: Se convierte en una tarea mas sencilla debido a la combinación con bibliotecas de Python, que facilitan la escritura, lectura y transformación de la información. 
+
+En conclusión, se trata de un formato muy versatil debido a su compatibilidad multilenguaje, pose flexibilidad y extensibilidad, ya que se puede incorporar nueva información conforme sea necesario y se trata de un formato sencillo y claro a la hora de su visualización.
+
+
+\section{HTML}
+
+\section{CSS}
+
+\section{NODEJS}
+
 
 
 
