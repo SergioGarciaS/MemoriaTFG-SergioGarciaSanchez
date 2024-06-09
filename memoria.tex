@@ -522,12 +522,38 @@ En conclusión, se trata de un formato muy versatil debido a su compatibilidad m
 
 \section{HTML}
 
-\section{CSS}
+Es el lenguaje utilizado para estructurar y crear páginas web y su contenido. HyperText Markup Languaje fue creado en 1991 y ha ido evolucionando conforme a las necesidades de los usuarios y desarrolladores web.
+
+Desde su comienzo han sido varias las versiones que se han desplegado, destacando HTML 2.0, dicha versión estandarizó muchas funcionalidades y etiquetas que eran soportadas por los navegadores de la época. La versión HTML 4.0 en la cual se introdujo las hojas de estilo CSS. Y la más conocida y actual HTML5, que data del 2014, dicha versión se caracteriza por la inclusión de nuevas etiquetas que dan soporte nativo a las fuentes multimedia, mejora de formularios y soporte para APIs avanzadas.
+
+El impacto provocado por esta versión se caracteriza por la transformación de como se interactua con el contenido en linea. A continuación se detalla las tendencias actuales y futuras que dan forma a la web:
+
+\textbf{Mejoras en posicionamiento SEO y accesibilidad:} Con la incorporación de nuevas etiquetas y atributos permiten a los desarrolladores crear webs que tengan mejor posicionamiento y visibilidad en motores de busqueda y tambien ayuda a ser mas accesibles para personas con discapacidades.
+
+\textbf{Interactividad con WebXR:} Esta tendencia ayuda a abrir nuevas soluciones para interactuar y sumergirte en la web, con la API WebXR ayuda a crear experiencias de realidad virtual (VR) y de realidad aumentada (AR).
+
+\textbf{Aplicaciones web progresivas (PWA):} Esta opción es muy popular entre los desarrolladores que buscan crear aplicaciones que puedan ser utilizadas desde cualquier dispositivo que disponga de un navegador.
+
+\textbf{WebAssembly:} es una tecnología que permite ejecutar codigo de bajo nivel como si se ejecutar de manera nativa. Se utiliza por ejemplo para ejecutar juegos, aplicaciones de calculo o software de edición como si de una aplicación nativa se tratara.
+
+\section{CSS3}
+Cascading Style Sheets u hojas de estilo en cascada define como se debe visualizar los elementos de HTML. Está diseñado para discretizar el contenido del documento y la forma de visualizarse dichos datos, se pueden aplicar características tales como los colores, fuentes y capas o layouts.
+
+Se le denomina estilos de cascada ya que se aplican las características de forma jerárquica (de arriba a abajo) siguiendo un patrón de herencia.
 
 \section{NODEJS}
 
+Es un entorno de ejecución de JavaScript implementado bajo el motor de Google Chrome V8, revolucionando el desarrollo de aplicación en la parte del servidor, permitiendo a los desarrolladores utilizar JavaScript tanto en Back-end como en Front-end. Es extremadamente escalable y eficiente para aplicaciones web y servidores puesto que su arquitectura está orientada a eventos y por su modelo de entrada/salida no bloqueante.
 
+Las características principales son:
 
+\begin{itemize}
+    \item Arquitectura Orientada a Eventos: Utiliza un bucle de eventos para controlar multiple conexiones simultaneas sin necesidad de establecer nuevos hilos de procesamiento.
+    \item Modelo de entrada/salida no bloqueante: Realiza operaciones entrada/salida de manera asíncrona, permitiendo no bloquear el hilo principal.
+    \item NPM: Es una colección de modulos y bibliotecas que los desarrolladores pueden utilizar.
+    \item Compatibilidad con JSON: Implementa la creación y consumo de APIs RESTful.
+    \item Servidor HTTP integrado: Facilidad de crear un servidor web sin necesidad de otros entornos mas complejos como Nginx o Apache.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -538,24 +564,21 @@ En conclusión, se trata de un formato muy versatil debido a su compatibilidad m
 \chapter{Diseño e implementación}
 \label{sec:diseno}
 
-Aquí viene todo lo que has hecho tú (tecnológicamente). 
-Puedes entrar hasta el detalle. 
-Es la parte más importante de la memoria, porque describe lo que has hecho tú.
-Eso sí, normalmente aconsejo no poner código, sino diagramas.
-
-
+En este capítulo se va a describir la estructura del software desarrollado, como se han utilizado las herramientas descritas en el apartado anterior.
 
 \section{Arquitectura general} 
 \label{sec:arquitectura}
 
-Si tu proyecto es un software, siempre es bueno poner la arquitectura (que es cómo se estructura tu programa a ``vista de pájaro'').
-
 \begin{figure}
   \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/arquitectura.png}
-  \caption{Estructura del parser básico}
+  \includegraphics[width=16cm, keepaspectratio]{img/esquemadatos.png}
+  \caption{Estructura de transformación de los datos}
   \label{fig:arquitectura}
 \end{figure}
+
+Si tu proyecto es un software, siempre es bueno poner la arquitectura (que es cómo se estructura tu programa a ``vista de pájaro'').
+
+
 
 
 Por ejemplo, puedes verlo en la figura~\ref{fig:arquitectura}.
